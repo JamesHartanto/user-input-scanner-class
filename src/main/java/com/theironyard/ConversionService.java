@@ -1,5 +1,7 @@
 package com.theironyard;
 
+import java.util.ArrayList;
+
 /**
  * The ConversionService is responsible for converting values between units. It
  * also can provide a list of units it can convert between (in String form).
@@ -37,8 +39,15 @@ public class ConversionService {
      * @return A ArrayList of lowercase Strings containing valid units. All underscores are replaced with spaces.
      */
     // todo: create listUnits() method
-
-
+    public ArrayList<String> listUnits(){
+        // Creating new variables
+        ArrayList<String> answer = new ArrayList<>();
+        //convert enum to string
+        for (int x = 0; x < 7; x = x + 1){
+            answer.add(Weight.values()[x].toString().toLowerCase().replaceAll("_"," "));
+        }
+        return answer;
+    }
 
     /**
      * Create a method named convert(). It accepts three arguments, the number
@@ -69,7 +78,7 @@ public class ConversionService {
      * @return the converted weight
      */
     // todo: create convert() method
-
-
-
+    public double convert(double weight, Weight from, Weight to){
+        return weight * from.getGrams() / to.getGrams();
+    }
 }

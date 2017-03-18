@@ -27,15 +27,20 @@ public enum Weight {
         FURLONG(123)
      */
     // todo: create enums that call a constructor to set their weight in grams
-
-
+    TON(907184.74),
+    POUND(453.59237),
+    OUNCE(28.349523),
+    STONE(6350.2932),
+    METRIC_TON(1000000),
+    KILOGRAM(1000),
+    GRAM(1);
 
     /**
      * Create a property that holds the enum value's weight in grams. This is
      * provided to and set by the Weight() constructor.
      */
     // todo: Create a private double property that holds the enum instance's weight in grams.
-
+    private double weight;
 
     /**
      * Create a constructor for the Weight enum. It should accept an argument
@@ -43,7 +48,9 @@ public enum Weight {
      * @param grams The enum instance's weight in grams.
      */
     // todo: create constructor
-
+    Weight(double grams){
+        this.weight = grams;
+    }
 
     /**
      * Create a method named getGrams() that accepts no arguments and returns
@@ -51,6 +58,7 @@ public enum Weight {
      * @return The enum's weight in grams
      */
     // todo: create getGrams() method
-
-
+    public double getGrams(){
+        return this.weight;
+    }
 }
